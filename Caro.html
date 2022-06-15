@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caro</title>
+</head>
+<body>
+<h1>Caro Game Simple</h1>
+<p id="in"></p>
+
+<br>
+<script>
+    //let caro = document.getElementById('in').value;
+    // for (let i = 0; i < 5; i++) {
+    //     for (let j = 0; j < 5; j++) {
+    //         document.write('0'+"&nbsp&nbsp")
+    //     }
+    //     document.write('<br>')
+    // }
+    //
+    // function changeValue() {
+    //     let a = prompt('enter row');
+    //     let b = prompt('enter col');
+    //     for (let i = 0; i < 5; i++) {
+    //         for (let j = 0; j < 5; j++) {
+    //             if (i == a && j == b) {
+    //                 document.write('x');
+    //             } else {
+    //                 document.write('0')
+    //             }
+    //         }
+    //         document.write('<br>')
+    //     }
+    // }
+    let array=[];
+    let data="";
+    for(let i=0;i<5;i++){
+        array[i]=new Array(0,0,0,0,0);
+    }
+    for (let i=0;i<5;i++){
+        data += "<br>";
+        for(let j=0;j<5;j++){
+            data += array[i][j]+"&nbsp;&nbsp";
+        }
+    }
+    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+    document.getElementById('in').innerHTML=data;
+
+    function changeValue() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        array[positionX][positionY] = "x";
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += array[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+        document.getElementById('in').innerHTML="<hr/>" + data;
+    }
+</script>
+
+</body>
+</html>
