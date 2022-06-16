@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim Max</title>
+</head>
+<body>
+<script>
+    let array = [1, 3, 6, 2, 5, 1, 9, 5, 8];
+    let max = array[0];
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] > max) {
+            max = array[i];
+        }
+    }
+    document.write("Max la: " + max);
+    let a = array.indexOf(9);
+    document.write("<br> o vi tri: " + a)
+
+</script>
+</body>
+</html>

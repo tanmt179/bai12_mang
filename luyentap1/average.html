@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Average</title>
+</head>
+<body>
+<script>
+    let array = [1, 3, 6, 2, 5, 1, 9, 5, 8];
+    let max = array[0];
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > max) {
+            max = array[i];
+        }
+    }
+    document.write("Max la: " + max);
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+    let average = sum / array.length;
+    document.write("<br>gia tri trung binh: " + average);
+</script>
+
+</body>
+</html>
