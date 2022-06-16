@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu dien</title>
+</head>
+<body>
+<h1>Từ điển Anh Việt</h1>
+<table border="1">
+    <tr>
+        <th>Nhập từ bạn muốn tra cứu</th>
+        <td rowspan="2">
+            <button id="search" onclick="search()">Tra cứu</button>
+        </td>
+        <td rowspan="2"><p id="in"></p></td>
+    </tr>
+    <tr>
+        <td><input type="text" id="text"></td>
+    </tr>
+</table>
+<script>
+    function search() {
+        let text = document.getElementById('text').value;
+        let english = ["banana", "apple", "lemon"];
+        let vietnam = ["chuối", "táo", "chanh"];
+        // for (let i = 0; i < english.length; i++) {
+        //     if (text === english[i]) {
+        //         document.getElementById('in').innerHTML =vietnam[i]
+        //         break;
+        //     } else {
+        //         document.getElementById('in').innerHTML = "khong tim thay"
+        //     }
+        // }
+        //.....................................
+        // let index = 0;
+        // for (let i = 0; i < english.length; i++) {
+        //     if (text === english[i]) {
+        //         index = i;
+        //         for (let j = 0; j < vietnam.length; j++) {
+        //             if (index === j) {
+        //                 document.getElementById('in').innerHTML = vietnam[j];
+        //                 break;
+        //             } else document.getElementById('in').innerHTML = "khong tim thay"
+        //         }
+        //     }
+        // }
+        
+
+    }
+</script>
+</body>
+</html>
