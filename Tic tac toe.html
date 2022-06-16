@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Caro Game Simple</h1>
+<p id="in"></p>
+
+<br>
+<script>
+    let array = [];
+    let data = "";
+    var h = 1;
+    for (let i = 0; i < 5; i++) {
+        array[i] = new Array("(.)", "(.)", "(.)", "(.)", "(.)");
+    }
+    for (let i = 0; i < 5; i++) {
+        data += "<br>";
+        for (let j = 0; j < 5; j++) {
+            data += array[i][j] + "&emsp;";
+        }
+    }
+    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+    document.getElementById('in').innerHTML = data;
+
+    function changeValue() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+
+        if (h % 2 == 0) {
+            array[positionX][positionY] = "X";
+        } else {
+            array[positionX][positionY] = "O";
+        }
+        h++;
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += array[i][j] + "&emsp;";
+            }
+        }
+        data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+        document.getElementById('in').innerHTML = "<hr/>" + data;
+        checkwin()
+    }
+
+    function checkwin() {
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array.length; j++) {
+                if (array[i][j] === "X" && array[i][j + 1] === "X" && array[i][j + 2] === "X" ||
+                    array[i][j] === "X" && array[i + 1][j] === "X" && array[i + 2][j] === "X"||
+                    array[i][j] === "X" && array[i + 1][j + 1] === "X" && array[i + 2][j + 2] === "X" ||
+                    array[i][j] === "X" && array[i + 1][j - 1] === "X" && array[i + 2][j - 2] === "X" ||
+                    array[i][j] === "X" && array[i - 1][j + 1] === "X" && array[i - 2][j + 2] === "X") {
+                    alert('X win')
+                } else if (array[i][j] === "O" && array[i][j + 1] === "O" && array[i][j + 2] === "O" ||
+                    array[i][j] === "O" && array[i + 1][j] === "O" && array[i + 2][j] === "O" ||
+                    array[i][j] === "O" && array[i + 1][j + 1] === "O" && array[i + 2][j + 2] === "O" ||
+                    array[i][j] === "O" && array[i + 1][j - 1] === "O" && array[i + 2][j - 2] === "O" ||
+                    array[i][j] === "O" && array[i - 1][j + 1] === "O" && array[i - 2][j + 2] === "O") {
+                    alert('O win')
+                }
+            }
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
